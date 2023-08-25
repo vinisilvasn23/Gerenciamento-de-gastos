@@ -1,13 +1,14 @@
-import { StyledHeadline2, StyledParagraph } from "../../styles/tipography";
-import { StyledSummary } from "./style";
+import { ISummaryProps } from '../../interfaces';
+import { StyledHeadline2, StyledParagraph } from '../../styles/tipography';
+import { StyledSummary } from './style';
 
-function Summary({ valueInsert }) {
+function Summary({ valueInsert }: ISummaryProps) {
   const value = valueInsert.map((values) => values.value);
 
   const sum = value.reduce((acc, value) => acc + value, 0);
-  const valueBrl = sum.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
+  const valueBrl = sum.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
   });
 
   return (
@@ -24,4 +25,5 @@ function Summary({ valueInsert }) {
     </>
   );
 }
+
 export default Summary;

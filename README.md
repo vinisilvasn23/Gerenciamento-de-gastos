@@ -41,3 +41,5 @@ Siga estas etapas para executar o projeto localmente:
 
 - React
 - Styled Components
+- TypeScript
+- Uuid

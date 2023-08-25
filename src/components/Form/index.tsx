@@ -5,30 +5,32 @@ import Input from "./Input/index";
 import Select from "./Select";
 import { StyledLabel, StyledSpan } from "../../styles/tipography";
 import { StyledForm } from "./style";
+import { IFormProps, ITransaction } from "../../interfaces";
 
-function Form({ valueInsert, setValueInserts }) {
-  const [description, setDescription] = useState("");
-  const [value, setValue] = useState("");
-  const [type, setType] = useState("");
 
-  function handleDescriptionChange(event) {
+function Form({ valueInsert, setValueInserts }: IFormProps) {
+  const [description, setDescription] = useState<string>("");
+  const [value, setValue] = useState<string>("");
+  const [type, setType] = useState<string>("");
+
+  function handleDescriptionChange(event: React.ChangeEvent<HTMLInputElement>) {
     setDescription(event.target.value);
   }
 
-  function handleValueChange(event) {
+  function handleValueChange(event: React.ChangeEvent<HTMLInputElement>) {
     const inputValue = event.target.value;
     const numericValue = inputValue.replace(/[^0-9.,]/g, "").replace(",", ".");
     setValue(numericValue);
   }
 
-  function handleTypeChange(event) {
+  function handleTypeChange(event: React.ChangeEvent<HTMLSelectElement>) {
     setType(event.target.value);
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const transaction = {
+    const transaction: ITransaction = {
       id: uuidv4(),
       description,
       value: type === "entrada" ? Number(value) : -Number(value),
@@ -65,7 +67,7 @@ function Form({ valueInsert, setValueInserts }) {
         <StyledLabel>Tipo de valor</StyledLabel>
         <Select value={type} onChange={handleTypeChange} />
 
-        <Button type="submit">Inserir valor</Button>
+        <Button onClick={handleSubmit}>Inserir valor</Button>
       </StyledForm>
     </>
   );

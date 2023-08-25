@@ -1,8 +1,9 @@
-import { StyledHeadline1, StyledHeadline2 } from "../../styles/tipography";
-import Card from "../Card";
-import { StyledContainerList, StyledList } from "./style";
+import { StyledHeadline1, StyledHeadline2 } from '../../styles/tipography';
+import Card from '../Card';
+import { StyledContainerList, StyledList } from './style';
+import { IFormProps } from '../../interfaces';
 
-function List({ valueInsert, setValueInserts }) {
+function List({ valueInsert, setValueInserts }: IFormProps) {
   return (
     <StyledContainerList>
       <StyledHeadline2>Resumo financeiro</StyledHeadline2>

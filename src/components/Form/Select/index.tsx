@@ -1,6 +1,7 @@
+import { ISelectProps } from "../../../interfaces";
 import { StyledSelect } from "./style";
 
-function Select({ value, onChange }) {
+function Select({ value, onChange }: ISelectProps) {
   return (
     <StyledSelect value={value} onChange={onChange} required>
       <option value="">Selecione</option>

@@ -1,21 +1,22 @@
+import { ICardProps } from "../../interfaces";
 import { StyledHeadline2, StyledParagraph } from "../../styles/tipography";
 import Button from "../Form/Button";
 import { StyledCard } from "./style";
 
-function Card({ valueInsert, setValueInserts }) {
-  const removeValueList = (id) => {
-    if (confirm("Você deseja mesmo excluir esse valor?")) {
+function Card({ valueInsert, setValueInserts }: ICardProps) {
+  const removeValueList = (id: number | string) => {
+    if (window.confirm("Você deseja mesmo excluir esse valor?")) {
       setValueInserts((valueInsert) =>
         valueInsert.filter((value) => value.id !== id)
       );
     }
   };
 
-  function cardClass(type) {
+  function cardClass(type: string) {
     return type === "entrada" ? "green" : "grey";
   }
 
-  function typeText(type) {
+  function typeText(type: string) {
     return type === "entrada" ? "Entrada" : "Despesa";
   }
 

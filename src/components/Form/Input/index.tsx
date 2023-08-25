@@ -1,6 +1,7 @@
+import { InputProps } from "../../../interfaces";
 import { StyledInput } from "./style";
 
-function Input({ type, id, value, onChange, placeholder }) {
+function Input({ type, id, value, onChange, placeholder }: InputProps) {
   return (
     <StyledInput
       type={type}
