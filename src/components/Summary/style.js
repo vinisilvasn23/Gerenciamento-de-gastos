@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledTotalValue = styled.div`
+export const StyledSummary = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 1.25rem;
