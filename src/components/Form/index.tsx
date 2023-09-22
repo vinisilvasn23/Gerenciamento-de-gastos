@@ -36,6 +36,16 @@ function Form({ valueInsert, setValueInserts }: IFormProps) {
       value: type === "entrada" ? Number(value) : -Number(value),
       type,
     };
+    
+    if(!transaction.description){
+      return alert("Por Favor! Insira uma descrição")
+    }
+    if(!transaction.value){
+      return alert("Por Favor! Insira um valor")
+    }
+    if(!transaction.type){
+      return alert("Por Favor! Insira o tipo de valor")
+    }
 
     setValueInserts([...valueInsert, transaction]);
     setDescription("");
